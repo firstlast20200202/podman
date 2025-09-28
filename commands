@@ -1,3 +1,46 @@
 to start, search WSL in Start tab and open it, it will open cmd automatically and in the proper route
 //ignore certificate
 podman run --tls-verify=false hello-world
+
+podman ps
+
+podman machine ls
+
+podman run hello-world
+
+podman pull --tls-verify=false nginx    //have an image available in podman now
+
+//see all the available images
+podman ps -a    //list all the containers ???
+podman images
+
+//run engine X
+podman run --rm -p 8080:80 nginx
+then open an browser with url: http://localhost:8080/
+then ctrl+C: exit the running process
+//-d makes it run in detach mode, so still can use the shell without ctrl+C to use it
+podman run --rm -d -p 8083:00 nginx
+then input http://localhost:8083/ into browser, it will run again.
+
+podman ps -a    //list all the containers ???
+stop [Container ID]    stop the running container with container ID
+
+pod create --name dotnetpod    //create
+podman run -d -pod dotnetpod nginx
+podman ps -a    //verify
+then in podman desktop: dash -> pod, the newly created pod show show up there
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
