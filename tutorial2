@@ -1,2 +1,8 @@
 //tutorial link: https://www.youtube.com/watch?v=YXfA5O5Mr18
 
+on Mac:
+brew install podman
+podman machine init
+podman machine start
+podman info
+podman version
