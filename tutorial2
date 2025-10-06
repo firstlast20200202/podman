@@ -2,7 +2,10 @@
 
 on Mac:
 brew install podman
+//containers are a Linux technology, the only way to run containers on other platforms is to rely on a Limux virtual machine, podman on MacOS and Windows requires a virtual machine. 
+//the default machine name os podman-machine-default if a machine name is not specified as an argument, then podman-machine-default will be started.
+//only one podman virtual machine can be started, if a virtual machine is already running, podman machine start returns an error.
 podman machine init
-podman machine start
+podman machine start    
 podman info
 podman version
