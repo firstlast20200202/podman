@@ -1,5 +1,6 @@
 add dockerfile in jetbrains rider
 
+on podman:
 Image -> Build 
 fill in dockerfile route and folder as well as name
 Build the image
