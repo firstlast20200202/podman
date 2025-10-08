@@ -1,7 +1,7 @@
 Image -> Build 
 fill in dockerfile route and folder as well as name
-Build
+Build the image
 
 Go back to Image
 find the last built one
-run
+run the code on the image
