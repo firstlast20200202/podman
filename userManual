@@ -1,3 +1,5 @@
+add dockerfile in jetbrains rider
+
 Image -> Build 
 fill in dockerfile route and folder as well as name
 Build the image
