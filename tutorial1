@@ -35,6 +35,7 @@ the solution is as below:
 
 > podman ps -a    //list all the containers ???
 > stop [Container ID]    //stop the running container with container ID
+//refresh the localhost:8083 page, it would lose the connection as expected
 //when the container is running, to run more commands, we would use ctrl+C on keyboard, but it will stop running the container
 //the solution is adding '-d' which means running in detached mode, so in this way we can keep the container running while we run other commands
 
