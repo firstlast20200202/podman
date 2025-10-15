@@ -2,47 +2,61 @@
 
 to start, search WSL in Start tab and open it, it will open cmd automatically and in the proper route
 //ignore certificate
-podman run --tls-verify=false hello-world
+> podman run --tls-verify=false hello-world
 
-podman ps
+> podman ps
 
-podman machine ls
+> podman machine ls
 
-podman run hello-world
+> podman run hello-world
 
-podman pull --tls-verify=false nginx    //have an image available in podman now
+> podman pull --tls-verify=false nginx    //have an image available in podman now
 
 //list all the available images
-podman ps -a    //list all the containers ???
-podman images
+> podman ps -a    //list all the containers ???
+> podman images
 
 //run engine X
-podman run --rm -p 8080:80 nginx
+> podman run --rm -p 8080:80 nginx
 then open a browser with url: http://localhost:8080/
 then ctrl+C: exit the running process
 //-d makes it run in detach mode, so still can use the shell without ctrl+C 
-podman run --rm -d -p 8083:00 nginx
+> podman run --rm -d -p 8083:00 nginx
 then input http://localhost:8083/ into the browser, it will run again.
 
 sometimes if run:
-podman run --tls-verify=false --rm -p 8080:80 nginx
+> podman run --tls-verify=false --rm -p 8080:80 nginx
 it'll get errors as below:
 Error: preparing container [containerID] for attach: pasta failed with exit code 1: 
 Failed to bind port 8080 (Address already in use) for option '-t 8080-8080:80-80', exiting
 the solution is as below:
-docker ps
-docker rm -f $(docker ps -aq)
+> docker ps
+> docker rm -f $(docker ps -aq)
 
-podman ps -a    //list all the containers ???
-stop [Container ID]    //stop the running container with container ID
+> podman ps -a    //list all the containers ???
+> stop [Container ID]    //stop the running container with container ID
 //when the container is running, to run more commands, we would use ctrl+C on keyboard, but it will stop running the container
 //the solution is adding '-d' which means running in detached mode, so in this way we can keep the container running while we run other commands
 
-pod create --name dotnetpod    //create
-podman run -d -pod dotnetpod nginx
-podman ps -a    //verify
-then in podman desktop application: dash -> pod, the newly created pod should show up there
+> pod create --name dotnetpod    //create
+> podman run -d -pod dotnetpod nginx
+> podman ps -a    //verify
+then in podman desktop application: Dashboard -> Pods, click the pod name, it will show the logs and inspect etc. of this newly created pod
 
+open jetbrains rider, click New Solution, select 'Web API' on the left side of the pop up window, Web API is the traditional ASP.NET Web Application, 
+set a solution name and follow the prompts to finish the process
+get into the folder in local machine where the solution has been created in, say, in folder 'MyPodmanAPI', there is one more folder called 'MyPodmanAPI' which has a dockerfile, 
+copy the dockerfile to the outer 'MyPodmanAPI' folder, then open terminal in the rider app, run:
+> podman build . -t MyPodmanAPI1
+it's pulling the image and building it as well as containerising the application into the image
+> podman images
+then run the application locally in development environment:
+podman run -p 8085:8080 MyPodmanAPI1
+then click the green triangle button on top right of rider app
+so now we are in the 'run' tab at the bottom left cornor of rider app
+click the 'terminal' tab under the 'run' tab, run the scripts typed already as above: podman run --tls-verify=false -p 8085:8080 mypodmanapi1
+//make sure all the letters are in lower cases
+error: requested access to the resource is denied
 
 
 
