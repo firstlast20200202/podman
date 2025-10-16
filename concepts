@@ -4,6 +4,6 @@ a pod acts as an abstraction layer, grouping one or more tightly-coupled contain
 this allows the containers within a pod to communicate with each other easily and efficiently.
 
 
-images: quick view of VM, including configuration applications and libraries, we can create containers on images, containers are configured VMs.
-dockfile: to create images
-differentce of docker and podman: docker needs access permission to root
+images: snapshot of VM, including configuration applications and libraries, we can create containers on images, containers are configured VMs.
+dockfile: to create images.
+difference of docker and podman: docker needs access permission to root.
