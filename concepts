@@ -2,3 +2,8 @@ a container is a room which includes an appilication and all its dependencies.
 a pod is the smallest deployable unit in Kubernetes that can contain one or more containers.
 a pod acts as an abstraction layer, grouping one or more tightly-coupled containers that share a network namespace, IP address, and storage volumes.
 this allows the containers within a pod to communicate with each other easily and efficiently.
+
+
+images: quick view of VM, including configuration applications and libraries, we can create containers on images, containers are configured VMs.
+dockfile: to create images
+differentce of docker and podman: docker needs access permission to root
