@@ -12,5 +12,8 @@ run the code on the image
 tips:
 after creating the dockerfile in jetbrains rider, move the dockfile to the folder which will be put in 'Build context directory'.
 if there's an error like 'in process hosting is not supported for AspNetCoreModule' while building, it might be due to some legacy issue, the solution is:
-add 'V2' in field 'module' in web.config file as below
+add 'V2' in field 'module' in web.config file to be like:
+<handlers>
+  <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
+</handlers>
 
