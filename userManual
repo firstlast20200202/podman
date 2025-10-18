@@ -10,6 +10,6 @@ find the last built one
 run the code on the image
 
 tips:
-after creating the dockerfile in jetbrains rider, move the dockfile to the outer folder which will be run
+after creating the dockerfile in jetbrains rider, move the dockfile to the folder which will be put in 'Build context directory'.
 if there's an error while running, it might be due to some legacy issue, the solution is:
 add 'V2' in field 'module' in web.config file
