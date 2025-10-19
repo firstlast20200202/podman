@@ -17,3 +17,4 @@ add 'V2' in field 'module' in web.config file to be like:
   <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
 </handlers>
 
+dockerfile for running angular components:
